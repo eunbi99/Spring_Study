@@ -1,0 +1,5 @@
+package com.springbook.injection;
+
+public class CollectionBean {
+
+}

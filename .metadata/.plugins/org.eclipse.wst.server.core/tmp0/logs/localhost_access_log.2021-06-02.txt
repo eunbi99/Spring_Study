@@ -1,0 +1,2 @@
+127.0.0.1 - - [02/Jun/2021:14:36:26 +0900] "GET / HTTP/1.1" 404 750
+0:0:0:0:0:0:0:1 - - [02/Jun/2021:14:36:27 +0900] "GET /BoardWeb/WEB-INF/classes/com/springbook/biz/board/impl/BoardServiceImpl.java HTTP/1.1" 404 721

@@ -2,3 +2,6 @@
 1622525314115	Extract interface 'Speaker'
 1622527734562	Rename type 'CollactionBeanClient'
 1622529181939	Rename package 'com.springbook.injection'
+1622607741430	Rename package 'com.springbook.biz.boardImpl'
+1622608193758	Move package
+1622617646451	Move compilation unit

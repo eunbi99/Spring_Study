@@ -1,0 +1,16 @@
+package com.springbook.biz.board.common;
+
+import java.sql.DriverManager;
+
+public class JDBCUtil {
+	public static void main(String[] args) {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			return DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "hr", "hr");
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+}

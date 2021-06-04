@@ -23,8 +23,8 @@ public class BoardDAOSpring {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
-	//SQL¸í·É¾îµé
-	private final String BOARD_INSERT = "insert into board(seq,title,writer,content) values(?,?,?,?)";
+	//SQLëª…ë ¹ì–´ë“¤
+	private final String BOARD_INSERT = "insert into board(seq,title,writer,content) values((select nvl(max(seq),0)+1 from board,?,?,?)";
 	private final String BOARD_UPDATE = "update board set title=?,content=? where seq=?";
 	private final String BOARD_DELETE="delete board where seq=?";
 	private final String BOARD_GET = "select * from board where seq=?";
@@ -36,38 +36,38 @@ public class BoardDAOSpring {
 //		super.setDataSource(dataSource);
 //	}
 //	
-	//CRUD ±â´ÉÀÇ ¸Ş¼Òµå ±¸Çö
-	//±Û µî·Ï
+	//CRUD ê¸°ëŠ¥ì˜ ë©”ì†Œë“œ êµ¬í˜„
+	//ê¸€ ë“±ë¡
 	public void insertBoard(BoardVO vo) {
-		System.out.println("====> JDBC ·Î insertBoard() ±â´É Ã³¸®");
+		System.out.println("====> JDBC ë¡œ insertBoard() ê¸°ëŠ¥ ì²˜ë¦¬");
 		jdbcTemplate.update(BOARD_INSERT,vo.getSeq(),vo.getTitle(),vo.getWriter(),vo.getContent());
 	}
 	
-	//±Û ¼öÁ¤
+	//ê¸€ ìˆ˜ì •
 		public void updateBoard(BoardVO vo) {
-			System.out.println("====> JDBC ·Î updateBoard() ±â´É Ã³¸®");
+			System.out.println("====> JDBC ë¡œ updateBoard() ê¸°ëŠ¥ ì²˜ë¦¬");
 			jdbcTemplate.update(BOARD_UPDATE,vo.getTitle(),vo.getContent(),vo.getSeq());
 
 		}
 		
-		//±Û »èÁ¦
+		//ê¸€ ì‚­ì œ
 				public void deleteBoard(BoardVO vo) {
-					System.out.println("====> JDBC ·Î deleteBoard() ±â´É Ã³¸®");
+					System.out.println("====> JDBC ë¡œ deleteBoard() ê¸°ëŠ¥ ì²˜ë¦¬");
 					jdbcTemplate.update(BOARD_DELETE,vo.getSeq());
 
 				}
 				
-				//±Û»ó¼¼ Á¶È¸
+				//ê¸€ìƒì„¸ ì¡°íšŒ
 				public BoardVO getBoard(BoardVO vo) {
-					System.out.println("====> JDBC ·Î getBoard() ±â´É Ã³¸®");
+					System.out.println("====> JDBC ë¡œ getBoard() ê¸°ëŠ¥ ì²˜ë¦¬");
 					Object[] args = {vo.getSeq()};
 					return jdbcTemplate.queryForObject(BOARD_GET,args,new BoardRowMapper());
 
 				}
 				
-				//±Û ¸ñ·Ï Á¶È¸
+				//ê¸€ ëª©ë¡ ì¡°íšŒ
 				public List<BoardVO> getBoardList(BoardVO vo) {
-					System.out.println("====> JDBC ·Î getBoardList() ±â´É Ã³¸®");
+					System.out.println("====> JDBC ë¡œ getBoardList() ê¸°ëŠ¥ ì²˜ë¦¬");
 					return jdbcTemplate.query(BOARD_LIST,new BoardRowMapper());
 				}
 

@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value=""/>
+		<item key="selection" value="BOARD_UPDATE"/>
 		<list key="findhistory">
+			<item value="BOARD_UPDATE"/>
 			<item value="com.spirngbook.biz.user"/>
 		</list>
 		<list key="replacehistory">

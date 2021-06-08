@@ -4,9 +4,6 @@
 <%@page import="com.springbook.biz.board.BoardVO" %>
 <%@page contentType="text/html; charset=EUC-KR" %>
 
-<%
-	List<BoardVO> boardList = (List) session.getAttribute("boardList");
-%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 						"http://www.w3.org/TR/html4/loose.dtd">
@@ -18,7 +15,7 @@
 <body>
 <center>
 	<h1>글 목록</h1>
-<h3>테스트님 환영합니다...<a href="logout.do">Log-out</a></h3>
+<h3>${userName}님 환영합니다...<a href="logout.do">Log-out</a></h3>
 
 <!-- 검색 시작 -->
 <form action="getBoardList.jsp" method="post">
@@ -26,8 +23,10 @@
 <tr>
 	<td align="right">
 		<select name="searchCondition">
-			<option value="TITLE">제목
-			<option value="CONTENT">내용
+			<c:forEach items="${conditionMap}" var="option">
+				<option value="${option.value}" >${option.key}
+				
+			</c:forEach>
 		</select>
 		<input name="searchKeyword" type="text"/>
 		<input type="submit" value="검색"/>

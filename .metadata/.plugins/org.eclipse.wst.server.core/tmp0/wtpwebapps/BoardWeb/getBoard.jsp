@@ -25,7 +25,7 @@
             </tr>
             <tr>
                <td bgcolor="orange">작성자</td>
-               <td align="left" name="writer"> ${board.writer}</td>
+               <td align="left"> ${board.writer}</td>
             </tr>
             <tr>
                <td bgcolor="orange">내용</td>

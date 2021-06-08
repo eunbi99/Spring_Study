@@ -14,11 +14,12 @@
 <table border="1" cellpadding="0" cellspacing="0">
 	<tr>
 		<td bgcolor="orange">아이디</td>
-		<td><input type="text" name="id"/></td>
+		<td><input type="text" name="id" value="${user.id}"/></td>
+		 <!-- loginController에서 @ModelAttribute를 사용하여 user로 변경했다.-->
 	</tr>
 	<tr>
 		<td bgcolor="orange">비밀번호</td>
-		<td><input type="password" name="password"/></td>
+		<td><input type="password" name="password" value="${user.password}"/></td>
 	<tr>
 	<tr>
 		<td colspan="2" align="center">

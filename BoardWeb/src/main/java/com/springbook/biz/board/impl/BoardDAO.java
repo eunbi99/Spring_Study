@@ -13,7 +13,7 @@ import com.springbook.biz.board.common.JDBCUtil;
 
 //DAO(Data Access Object)
 
-//@Repository("boardDAO")
+@Repository("boardDAO")
 public class BoardDAO {
 	//JDBC ���� ����
 	private Connection conn=null;
@@ -26,6 +26,8 @@ public class BoardDAO {
 	private final String BOARD_DELETE="delete board where seq=?";
 	private final String BOARD_GET = "select * from board where seq=?";
 	private final String BOARD_LIST ="select * from board order by seq desc";
+	private final String BOARD_LIST_T = "select * from board where title like '%' || ? || '%' order by seq desc";
+	private final String BOARD_LIST_C = "select * from board where content like '%' || ? || '%' order by seq desc";
 	
 	//CRUD ����� �޼ҵ� ����
 	//�� ���
@@ -105,13 +107,18 @@ public class BoardDAO {
 					return board;
 				}
 				
-				//�� ��� ��ȸ
+				//글 목록 조회
 				public List<BoardVO> getBoardList(BoardVO vo) {
 					System.out.println("====> JDBC �� getBoardList() ��� ó��");
 					List<BoardVO> boardList = new ArrayList<BoardVO>();
 					try {
 						conn=JDBCUtil.getConnection();
-						stmt = conn.prepareStatement(BOARD_LIST);;
+						if(vo.getSearchCondition().equals("TITLE")) {
+							stmt=conn.prepareStatement(BOARD_LIST_T);
+						}else if(vo.getSearchCondition().equals("CONTENT")) {
+							stmt=conn.prepareStatement(BOARD_LIST_C);
+						}
+						stmt.setString(1, vo.getSearchKeyword());
 						rs=stmt.executeQuery();
 						while(rs.next()) {
 							BoardVO board = new BoardVO();

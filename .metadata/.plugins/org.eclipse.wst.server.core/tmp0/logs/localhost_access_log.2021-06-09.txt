@@ -153,3 +153,15 @@
 0:0:0:0:0:0:0:1 - - [09/Jun/2021:17:27:43 +0900] "POST /BoardWeb/getBoardList.do HTTP/1.1" 200 1372
 0:0:0:0:0:0:0:1 - - [09/Jun/2021:17:27:51 +0900] "GET /BoardWeb/index.jsp HTTP/1.1" 200 427
 0:0:0:0:0:0:0:1 - - [09/Jun/2021:17:27:52 +0900] "GET /BoardWeb/dataTransform.do HTTP/1.1" 200 1060
+127.0.0.1 - - [09/Jun/2021:17:58:32 +0900] "GET / HTTP/1.1" 404 750
+0:0:0:0:0:0:0:1 - - [09/Jun/2021:17:58:32 +0900] "GET /BoardWeb/index.jsp HTTP/1.1" 200 427
+0:0:0:0:0:0:0:1 - - [09/Jun/2021:17:58:43 +0900] "GET /BoardWeb/getBoardList.do HTTP/1.1" 200 2251
+127.0.0.1 - - [09/Jun/2021:17:58:43 +0900] "GET /BoardWeb/getBoardList.do HTTP/1.1" 200 2251
+127.0.0.1 - - [09/Jun/2021:17:58:46 +0900] "GET /BoardWeb/dataTransform.do HTTP/1.1" 200 1060
+127.0.0.1 - - [09/Jun/2021:17:58:51 +0900] "GET /BoardWeb/getBoardList.do HTTP/1.1" 200 2251
+0:0:0:0:0:0:0:1 - - [09/Jun/2021:17:59:46 +0900] "GET /BoardWeb/index.jsp HTTP/1.1" 200 427
+0:0:0:0:0:0:0:1 - - [09/Jun/2021:17:59:49 +0900] "GET /BoardWeb/getBoardList.do HTTP/1.1" 200 2251
+0:0:0:0:0:0:0:1 - - [09/Jun/2021:18:00:03 +0900] "GET /BoardWeb/index.jsp HTTP/1.1" 200 427
+0:0:0:0:0:0:0:1 - - [09/Jun/2021:18:00:05 +0900] "GET /BoardWeb/getBoardList.do HTTP/1.1" 200 2237
+0:0:0:0:0:0:0:1 - - [09/Jun/2021:18:02:37 +0900] "GET /BoardWeb/getBoardList.do HTTP/1.1" 200 2251
+0:0:0:0:0:0:0:1 - - [09/Jun/2021:18:02:38 +0900] "GET /BoardWeb/getBoardList.do HTTP/1.1" 200 2251

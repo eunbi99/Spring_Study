@@ -6,13 +6,16 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="basenames"/>
+		<item key="selection" value=""/>
 		<list key="findhistory">
+			<item value="insetBoard"/>
+			<item value="BoardDAO.insetBoard"/>
+			<item value="sql-map;config.xml"/>
+			<item value="getBoardList"/>
 			<item value="basenames"/>
 			<item value="messageSource"/>
 			<item value="message.user.login.title"/>
 			<item value="message.user.login.title&apos;"/>
-			<item value="getBoardList"/>
 			<item value="BOARD_UPDATE"/>
 			<item value="com.spirngbook.biz.user"/>
 		</list>
